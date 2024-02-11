@@ -9,7 +9,13 @@ class HomePage(BasePage):
         super().__init__(driver)
 
     KEY_PRESSES_LINK = (By.XPATH, "//a[@href='/key_presses']")
+    REDIRECT_LINK = (By.XPATH, "//a[@href='/redirector']")
 
     @property
     def key_presses_link(self):
         return self.find(self.KEY_PRESSES_LINK)
+
+    @property
+    def redirect_link(self):
+        return self.find(self.REDIRECT_LINK)
+
