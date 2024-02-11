@@ -1,4 +1,3 @@
-from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 from pages.base_page import BasePage
@@ -22,4 +21,3 @@ class HomePage(BasePage):
     @property
     def status_codes_link(self):
         return self.find((By.XPATH, "//a[@href='/status_codes']"))
-

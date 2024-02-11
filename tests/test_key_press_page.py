@@ -2,8 +2,6 @@ import pytest
 from _pytest.fixtures import fixture
 from selenium.webdriver import Keys
 
-from pages.home_page import HomePage
-
 
 @fixture(scope='module')
 def get_key_presses_page(get_app):

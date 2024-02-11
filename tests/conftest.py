@@ -1,5 +1,6 @@
 import pytest
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
 
@@ -9,7 +10,10 @@ from settings import BASE_URL
 
 @pytest.fixture(scope="module")
 def get_driver():
-    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+    options = Options()
+    options.add_argument("--headless")
+
+    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
     # driver.maximize_window()
     driver.implicitly_wait(10)
     driver.get(BASE_URL)
