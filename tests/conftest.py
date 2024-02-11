@@ -10,7 +10,7 @@ from settings import BASE_URL
 @pytest.fixture(scope="module")
 def get_driver():
     driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
-    driver.maximize_window()
+    # driver.maximize_window()
     driver.implicitly_wait(10)
     driver.get(BASE_URL)
     yield driver

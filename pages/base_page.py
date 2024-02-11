@@ -6,7 +6,7 @@ from settings import BASE_URL
 
 
 class BasePage:
-    def __int__(self, driver: webdriver):
+    def __init__(self, driver: webdriver):
         self._driver = driver
         self._wait = WebDriverWait(self._driver, 10)
 
