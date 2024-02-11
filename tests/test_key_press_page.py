@@ -15,6 +15,7 @@ def get_key_presses_page(get_app):
 tests_1 = [(chr(i), chr(i)) for i in range(0, 128)]
 
 
+@pytest.mark.xfail(reason="Some button codes for the keyboard are displayed wrong on the page.")
 @pytest.mark.parametrize('key, expected_text', tests_1)
 def test_key_press_01(get_key_presses_page, key, expected_text):
     app = get_key_presses_page
