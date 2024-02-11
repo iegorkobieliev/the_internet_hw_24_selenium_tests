@@ -19,3 +19,7 @@ class HomePage(BasePage):
     def redirect_link(self):
         return self.find(self.REDIRECT_LINK)
 
+    @property
+    def status_codes_link(self):
+        return self.find((By.XPATH, "//a[@href='/status_codes']"))
+

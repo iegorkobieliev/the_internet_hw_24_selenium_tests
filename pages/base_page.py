@@ -20,3 +20,5 @@ class BasePage:
         url = BASE_URL + url
         self._driver.get(url)
 
+    def get_url(self):
+        return self._driver.current_url
